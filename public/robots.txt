@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alcantara29a.id/sitemap.xml
