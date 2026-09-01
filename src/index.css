@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@700&display=swap');
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{color:#0b2341;background:#f7fafc;font-family:Inter,system-ui,sans-serif;font-synthesis:none}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px}button,input{font:inherit}
+@layer components{
+ .shell{@apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12}
+ .eyebrow{@apply text-[11px] font-bold uppercase tracking-[.24em] text-air}
+ .h2{@apply mt-3 font-display text-3xl leading-tight text-navy sm:text-4xl}
+ .card{@apply rounded-2xl border border-slate-200/80 bg-white shadow-[0_12px_40px_rgba(7,24,47,.07)]}
+ .btn{@apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-300}
+ .btn-primary{@apply btn bg-air text-white shadow-lg shadow-air/20 hover:-translate-y-0.5 hover:bg-[#0e6fae]}
+ .btn-ghost{@apply btn border border-white/25 text-white hover:bg-white/10}
+ .badge{@apply inline-flex items-center rounded-full border border-air/15 bg-sky px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-air}
+}
+.radar{background-image:radial-gradient(circle at 70% 45%,transparent 0 90px,rgba(255,255,255,.055) 91px 92px,transparent 93px 160px,rgba(255,255,255,.05) 161px 162px,transparent 163px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:auto,44px 44px,44px 44px}.no-scrollbar::-webkit-scrollbar{display:none}
