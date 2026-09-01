@@ -48,9 +48,14 @@ button,a,select,input{touch-action:manipulation}.filter-drawer{padding-bottom:ca
 @media(max-width:359px){.shell{padding-left:14px;padding-right:14px}.header-actions{gap:0}.header-actions button{width:40px}.app-header .header-inner>a>span:first-child{width:34px;height:34px}.app-header .header-inner>a b{font-size:12px}.bottom-nav{padding-inline:3px}.bottom-nav a{font-size:8px}.search-panel>div{gap:9px}.search-panel>div>span{width:42px;height:42px}.directory-search{padding-left:12px}.mobile-filter{padding-inline:7px}.verified{font-size:0}.verified svg{margin:0}.profile-actions{grid-template-columns:1fr}.ld-milestones{gap:6px}.ld-milestones>div{padding:20px 8px}}
 @media(prefers-reduced-motion:reduce){.route-progress{display:none}.app-header,.bottom-nav,.nav-sheet{backdrop-filter:none}*,*:before,*:after{transition-duration:.01ms!important}}
 
-/* Production accessibility and loading states */
-.skip-link{position:fixed;z-index:200;left:16px;top:10px;transform:translateY(-150%);border-radius:8px;background:#fff;padding:10px 14px;color:#071a33;font-weight:800;box-shadow:0 8px 30px #0004}.skip-link:focus{transform:translateY(0)}
-:where(a,button,input,select,[tabindex]):focus-visible{outline:3px solid #f2c969;outline-offset:3px;border-radius:4px}
-.route-fallback{display:flex;min-height:50svh;align-items:center;justify-content:center;gap:12px;background:#f7fafc;color:#40566a;font-size:13px;font-weight:700}.route-fallback span{width:20px;height:20px;border:2px solid #cbd5e1;border-top-color:#1684c7;border-radius:50%;animation:route-spin .7s linear infinite}@keyframes route-spin{to{transform:rotate(360deg)}}
-#main-content:focus{outline:none}img{height:auto}.directory-avatar,.portrait-wrap img,.related-grid img,.network-preview img,.alumni-node img{aspect-ratio:1;object-fit:cover}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.route-fallback span{animation:none}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+/* Motion and interaction refinements */
+.app-header{transition:background-color .3s ease,border-color .3s ease,box-shadow .3s ease}
+.app-header.is-scrolled{background:rgba(4,17,36,.94);border-bottom-color:rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(4,17,36,.14);backdrop-filter:blur(18px)}
+.app-header.is-scrolled .header-inner{min-height:58px}
+.header-inner{transition:min-height .3s ease}
+.card{position:relative;transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s ease,box-shadow .3s ease}
+.card:hover{border-color:rgba(22,132,199,.28);box-shadow:0 18px 45px rgba(7,24,47,.11)}
+.card:after{content:"";position:absolute;right:1rem;bottom:0;left:1rem;height:2px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#c9a55c,#1684c7);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.card:hover:after{transform:scaleX(1)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e7c76f;outline-offset:3px}
+@media(hover:none){.card:active{transform:scale(.98)}}
